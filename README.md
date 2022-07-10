@@ -15,6 +15,8 @@
 
 执行 pip3 install -r requirements.txt
 
+修改main.py中的账号密码
+
 安装screen （百度）
 
 执行 screen -S huluxia
