@@ -27,3 +27,6 @@
 
 ![image](https://user-images.githubusercontent.com/83952182/178152075-829f693a-1362-4c52-aa30-498802b9d07a.png)
 
+2023.1.29更新
+更新新版本签到接口，替换签到方式为循环遍历300以下的id
+以免葫芦侠每个分区id变动
