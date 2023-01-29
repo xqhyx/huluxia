@@ -56,16 +56,19 @@ def experience_sign():
         'Accept-Encoding': 'gzip, deflate',
         'User-Agent': 'okhttp/3.8.1',
     }
-    plate = {'44':'玩机教程','16':'玩机广场',"43":"实用软件","81":"手机美化","45":"原创技术","96":"技术分享","70":"福利活动","111":"Steam","4":"游戏","29":"次元阁","102":"LOL手游","71":"王者荣耀","105":"DNF手游","107":"三两影","90":"和平精英","115":"金铲铲之战","112":"使命召唤手游","21":"穿越火线","117":"幻塔","110":"原神","101":"跑跑卡丁车","56":"清凉一夏","3":"自拍","88":"QQ飞车","76":"娱乐天地","57":"头像签名","92":"模型玩具","98":"制图工坊","58":"恶搞","82":"3楼学院","77":"球球大作战","63":"我的世界","22":"英雄联盟","23":"地下城与勇士","113":"摩尔庄园手游","103":"明日之后","2":"泳池","108":"新游推荐","116":"骑士团"}                                                                                                                                                            
-
-    for id,val in plate.items() :      
-        experience_sign_url = "http://floor.huluxia.com/user/signin/ANDROID/4.0?platform=2&gkey=000000&app_version=4.1.0.9&versioncode=20141462&market_id=floor_tencent&_key="+key+"&device_code=%5Bd%5D55bccbf4-0"+device_code_random_str+"-45a6-8cab-80c000115fab&phone_brand_type="+phone_brand_type_random+"&cat_id="+ id
- 
+    #plate = {'44':'玩机教程','16':'玩机广场',"43":"实用软件","81":"手机美化","45":"原创技术","96":"技术分享","70":"福利活动","111":"Steam","4":"游戏","29":"次元阁","102":"LOL手游","71":"王者荣耀","105":"DNF手游","107":"三两影","90":"和平精英","115":"金铲铲之战","112":"使命召唤手游","21":"穿越火线","117":"幻塔","110":"原神","101":"跑跑卡丁车","56":"清凉一夏","3":"自拍","88":"QQ飞车","76":"娱乐天地","57":"头像签名","92":"模型玩具","98":"制图工坊","58":"恶搞","82":"3楼学院","77":"球球大作战","63":"我的世界","22":"英雄联盟","23":"地下城与勇士","113":"摩尔庄园手游","103":"明日之后","2":"泳池","108":"新游推荐","116":"骑士团"}                                                                                                                                                            
+    
+    for id in range(300):
+        id=str(id)    
+        #print(id)
+        print("签到中,大约需要四分钟") 
+        experience_sign_url = "http://floor.huluxia.com/user/signin/detail/ANDROID/4.0?platform=2&gkey=000000&app_version=4.2.0.6&versioncode=20201462&market_id=floor_tencent&_key="+key+"&device_code=%5Bd%5D55bccbf4-0"+device_code_random_str+"-45a6-8cab-80c000115fab&phone_brand_type="+phone_brand_type_random+"&cat_id="+ id
+        
         time.sleep(1)
         sign_in_return_json = requests.get(experience_sign_url,headers=headers).json()
-        if sign_in_return_json['msg'] == "":
-            print(val+"板块签到成功，经验值+"+ str(sign_in_return_json['experienceVal']))
-        else:
+        
+        if sign_in_return_json['msg'] != "":
+           ## print("签到成功，经验值+"+ str(sign_in_return_json['experienceVal']))
             print("未知错误,联系作者棉花糖1113335577")
             sys.exit() 
             
@@ -91,7 +94,7 @@ def exp_time():
 
 
 if __name__ == "__main__":
-    username = "**********"
+    username = "******"
     password = "1113335577"
     Sign_in(username,password)
     experience_sign()
